@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Save the Trees</title>
+</head>
+
+<body>
+    <style>
+        body {
+            text-align: center;
+            margin: 0;
+            padding: 0;
+            position: relative;
+            background: url("photo.avif");
+            height: 100vh;
+            overflow-x: hidden;
+        }
+
+        #header {
+            font-family: 'Courier New', Courier, monospace;
+            z-index: 4;
+            color: white;
+        }
+
+        #informationDiv {
+            width: 40vw;
+            height: fit-content;
+            background-color: white;
+            position: absolute;
+            left: 5%;
+            border-radius: 20px;
+            border: 5px solid black;
+            z-index: 4;
+        }
+
+        #donateDiv {
+            width: 40vw;
+            height: 35%;
+            background-color: white;
+            position: absolute;
+            right: 5%;
+            border-radius: 20px;
+            border: 5px solid black;
+            z-index: 4;
+        }
+
+        .sectionHeader {
+            font-size: 3vmin;
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+        }
+
+        .subsectionHeader {
+            font-size: 3vmin;
+            font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+            margin-bottom: 3px;
+        }
+
+        .paragraph {
+            font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+            font-size: 2vmin;
+            font-weight: 500;
+            margin-top: 0;
+        }
+
+        #lightScreen {
+            width: 100vw;
+            height: 100vh;
+            position: absolute;
+            top: 0;
+            background-image: linear-gradient(rgba(109, 239, 86, 0.2), rgba(0, 0, 0, .2))
+        }
+
+        #donateButton {
+            width: 24vw;
+            height: 12vh;
+            font-size: 32px;
+            border-radius: 20px;
+            border: none;
+            background: #20af20;
+            color: white;
+        }
+    </style>
+    <br>
+    <h1 id="header">Save the Trees</h1>
+    <div id="informationDiv">
+        <h2 class="sectionHeader">Info</h2>
+        <h4 class="subsectionHeader">The Problem</h4>
+        <h5 class="paragraph">In Loudoun County, trees are affected and damaged due to invasive species, pests, and
+            deforestation. See how each cause is devastating to plants and the earth.</h5>
+
+        <h4 class="subsectionHeader">Why Trees are Important</h4>
+        <h5 class="paragraph">Trees are used to make more than 5000 products, including chocolate, paper, and pencils.
+            Trees provide oxygen for us and inhale carbon dioxide. Trees also help support the entire ecosystem.</h5>
+
+        <h4 class="subsectionHeader">Invasive Species and Pests</h4>
+        <h5 class="paragraph">Invasive species such as aphids and emerald ash <br> borer destroy forests all over Virginia.
+        </h5>
+
+        <h4 class="subsectionHeader">Deforestation</h4>
+        <h5 class="paragraph">More than 10 acres of land in Loudoun County to be deforested. Deforestation also indirectly causes climate change, as more CO<sub>2</sub> is allowed in the air.</h5>
+
+        <h4 class="subsectionHeader">Conclusion</h4>
+        <h5 class="paragraph">In our community, trees are important and we <br> need to save them.</h5>
+
+
+    </div>
+    <div id="donateDiv">
+        <h2 class="sectionHeader">Donation</h2>
+        <h4 class="subsectionHeader">If you would like to donate, click below!</h4>
+        <br>
+        <a href="pay.html"><button id="donateButton">Donate</button></a>
+    </div>
+    <div id="lightScreen"></div>
+</body>
+
+</html>

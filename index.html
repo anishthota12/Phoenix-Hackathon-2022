@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tree Runner</title>
+</head>
+<body>
+  <style>
+    body {
+      text-align: center;
+      background: url("photo.avif");
+      margin: 0;
+      padding: 0;
+      width: 100vw;
+      height: 100vh;
+      overflow: hidden;
+      position: relative;
+    }
+    nav {
+      background-color: rgba(0, 0, 0, .5);
+      box-shadow: 0 5px 10px 5px rgba(0, 0, 0, .5);
+      position: absolute;
+      width: 100vw;
+      height: 15vh;
+    }
+    nav #header {
+      z-index: 3;
+      color: white;
+      font-family: Georgia, 'Times New Roman', Times, serif;
+      font-size: xx-large;
+    }
+    #jumpCounter {
+      color: white;
+      margin-top: 20vh;
+      width: 100vw;
+      position: absolute;
+      left: calc(50% - 50vw);
+    }
+    .game {
+      width: 900px;
+      height: 225px;
+      border: 5px solid rgb(0, 0, 0);
+      border-radius: 10px;
+      background-color: rgb(255, 255, 255);
+      margin: auto;
+      margin-top: 200px;
+      position: relative;
+      overflow-y: hidden;
+    }
+    #dino {
+      width: 67px;
+      height: 81px;
+      background-image: url("axe.png");
+      background-size: 67px 81px;
+      position: absolute;
+      top: 150px;
+    }
+    .jump {
+      animation: jump .75s ease;
+    }
+    @keyframes jump {
+      0% {
+        top: 150px;
+      }
+
+      50% {
+        top: 25px;
+      }
+
+      100% {
+        top: 150px;
+      }
+    }
+    #cactus {
+      width: 150px;
+      height: 120px;
+      position: relative;
+      top: 120px;
+      left: 130px;
+      background-image: url("tree.png");
+      background-size: 150px 120px;
+      animation: block 3s infinite linear;
+    }
+    @keyframes block {
+      0% {
+        left: 580px;
+      }
+      100% {
+        left: -100px;
+      }
+    }
+  </style>
+  <nav>
+    <h1 id="header">Tree Runner</h1>
+  </nav>
+  <br>
+  <br>
+  <h3 id="jumpCounter">Jumps: </h3>
+  <br>
+  <br>
+  <div class="game">
+    <div id="dino"></div>
+    <div id="cactus"></div>
+  </div>
+  <script>
+    jumpCounter = 0;
+    const dino = document.getElementById("dino");
+    const cactus = document.getElementById("cactus");
+    function jump() {
+  if (dino.classList != "jump") {
+    jumpCounter = jumpCounter + 1;
+    document.getElementById("jumpCounter").innerHTML = "Jumps: " + jumpCounter;
+    dino.classList.add("jump");
+    setTimeout(function () {
+      dino.classList.remove("jump");
+    }, 750);
+  }
+}
+    let isAlive = setInterval(function () {
+      // get current dino Y position
+      let dinoTop = parseInt(window.getComputedStyle(dino).getPropertyValue("top"));
+      // get current cactus X position
+      let cactusLeft = parseInt(
+        window.getComputedStyle(cactus).getPropertyValue("left")
+      );
+      // detect collision
+      if (cactusLeft < 35 && cactusLeft > 0 && dinoTop >= 150) {
+        // collision
+        console.log(dinoTop)
+        alert("This is what happens to trees every day!")
+        window.location = "trees.html"
+      }
+    }, 10);
+    document.addEventListener("keydown", function (event) {
+      jump();
+    });
+  </script>
+</body>
+</html>
