@@ -20,9 +20,17 @@
             overflow-x: hidden;
         }
 
-        a {
+        #backButton {
+            position: absolute;
+            transform: rotate(180deg);
+            background: none;
+            border: none;
             color: white;
-            transform: rotate()
+            font-size: xx-large;
+            left: 1%;
+            top: 1%;
+            cursor: pointer;
+            z-index: 20;
         }
 
         #header {
@@ -90,7 +98,7 @@
         }
     </style>
     <br>
-    <a href="index.html">&#10149;</a>
+    <button id="backButton" onclick="back()">&#10149;</button>
     <h1 id="header">Save the Trees</h1>
     <div id="informationDiv">
         <h2 class="sectionHeader">Info</h2>
@@ -121,6 +129,9 @@
         <a href="pay.html"><button id="donateButton">Donate</button></a>
     </div>
     <div id="lightScreen"></div>
+    <script>
+        function back() {window.location = "index.html"; console.log("hi")}
+    </script>
 </body>
 
 </html>
